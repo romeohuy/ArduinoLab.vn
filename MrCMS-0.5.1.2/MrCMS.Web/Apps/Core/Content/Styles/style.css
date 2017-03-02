@@ -1,4 +1,12 @@
-﻿.btn, input, .navbar {
+﻿@import url('https://fonts.googleapis.com/css?family=Open+Sans');
+body {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 16px;
+}
+.navbar-brand {
+    padding: 5px !important;
+}
+.btn, input, .navbar {
     -webkit-border-radius: 0 !important;
     -moz-border-radius: 0 !important;
     border-radius: 0 !important;
@@ -39,20 +47,28 @@ h2.not-registered {
 .input-validation-error {
     border: 1px solid red!important;
 }
-
+.navbar-brand {
+    margin-top: 8px;
+}
 nav.navbar-mrcms {
-    background-color: #1BA1E2;
-    color: white;
+    background-color: #00979c;
+    color: #f1f1f1;
     border: none;
 }
 
     nav.navbar-mrcms ul li a, .navbar-brand {
-        color: white;
+        color:  #f1f1f1;
+        font-weight: 500;
+    }
+
+    nav.navbar-mrcms ul li.active {
+        background-color: #008184 !important;
+        color: #f1f1f1;
     }
 
     nav.navbar-mrcms .nav > li > a:hover, nav.navbar-mrcms .nav > li > a:focus {
-        background-color: #e7e7e7;
-        color: grey;
+        background-color: #008184 !important;
+        color: #f1f1f1;
     }
 
     nav.navbar-mrcms ul.dropdown-menu li a {
@@ -71,7 +87,33 @@ nav.navbar-mrcms {
         background: #1BA1E2;
     }
 
+    /**Article list style**/
+    .article-title-item {
+         margin-bottom: 10px;
+         color: #e47128;
+    }
+    .article-title-item a {
+        color: #e47128;
+    }
+    .article-image {
+        padding: 10px 0;
+    }
+ .article-image img
+     {
+       max-width: 100%;  
+     }
+    /**End article list style**/
+
+    .bg-footer {
+        background-color: #00979c;
+        color: #f1f1f1;
+        padding: 20px 0;
+    }
 @media (max-width: 768px) {
+    .article-image img
+     {
+       width: 100%;  
+     }
     #nav-links-right {
         position: absolute;
         top: 0;
@@ -133,5 +175,9 @@ nav.navbar-mrcms {
 }
 
 @media (max-width: 768px) {
+     .article-image img
+     {
+       width: 100%;  
+     }
     #nav-links-right .navbar-form { margin: 0;padding: 3px 10px;width: 220px;}
 }

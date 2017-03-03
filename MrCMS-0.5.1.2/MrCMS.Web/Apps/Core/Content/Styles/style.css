@@ -1,7 +1,7 @@
 ﻿@import url('https://fonts.googleapis.com/css?family=Open+Sans');
 body {
     font-family: 'Open Sans', sans-serif;
-    font-size: 16px;
+    font-size: 14px;
 }
 .navbar-brand {
     padding: 5px !important;
@@ -58,7 +58,7 @@ nav.navbar-mrcms {
 
     nav.navbar-mrcms ul li a, .navbar-brand {
         color:  #f1f1f1;
-        font-weight: 500;
+        font-weight: normal;
     }
 
     nav.navbar-mrcms ul li.active {
@@ -103,7 +103,26 @@ nav.navbar-mrcms {
        max-width: 100%;  
      }
     /**End article list style**/
+    /**widget-article-title**/
+    .widget-article-title {
+        background-color: #00979c;
+        color: #f1f1f1;
+        padding: 10px;
+    }
+    .widget-article-title-item {
+        border-bottom: 1px dashed #e1e1e1;
+        padding: 5px 0 10px 0;
+        font-size: 14px;
+    }
+    .widget-article-title-item a {
+        color: #e47128;
+    }
+    .widget-article-title-item a.hover {
+        color: #e47128;
+        text-decoration: underline;
+    }
 
+    /*End widget-article-title*/
     .bg-footer {
         background-color: #00979c;
         color: #f1f1f1;

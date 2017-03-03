@@ -3,11 +3,11 @@
 {
     if (!String.IsNullOrEmpty(Model.Title))
     {
-    <h4>@Model.Title</h4>
+    <h4 class="widget-article-title">@Model.Title</h4>
     }
 
     foreach (var article in Model.Articles)
     {
-    <h4><a href="/@article.LiveUrlSegment">@article.Name</a></h4>
+    <h4 class="widget-article-title-item"><a href="/@article.LiveUrlSegment">@article.Name</a></h4>
     }
 }

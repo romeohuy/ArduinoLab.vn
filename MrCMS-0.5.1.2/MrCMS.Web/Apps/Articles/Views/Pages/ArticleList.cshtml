@@ -3,41 +3,47 @@
 @using MrCMS.Paging
 @using MrCMS.Web.Apps.Articles.Models
 @using MrCMS.Web.Apps.Articles.Pages
-@model ArticleList     
-@Editable(Model, p=>p.BodyContent, true)
+@model ArticleList
+@Editable(Model, p => p.BodyContent, true)
 @{
     var pagedList = ViewData["paged-articles"] as IPagedList<Article>;
     var searchModel = ViewData["article-search-model"] as ArticleSearchModel;
 }
-@if (pagedList !=null && !pagedList.Any() && !string.IsNullOrEmpty(searchModel.Category))
+@if (pagedList != null && !pagedList.Any() && !string.IsNullOrEmpty(searchModel.Category))
 {
     <div class="alert alert-info">No posts available in category "@searchModel.Category".</div>
     <p><a href="/@Model.LiveUrlSegment">Show all</a></p>
 }
 @if (pagedList != null)
 {
-    foreach (var page in pagedList)
-    {
+        foreach (var page in pagedList)
+        {
             if (page.PublishOn != null)
             {
-    <div class="row">
-        <div class="col-lg-12">
-            <h3 class="article-title-item margin-bottom-0"><a href="/@page.LiveUrlSegment">@page.Name </a></h3>
-            <span class="small"><i class="fa fa-calendar"></i><strong> @page.PublishOn.Value.Day @page.PublishOn.Value.ToString("MMMMM") @page.PublishOn.Value.Year</strong></span>
 
-            @if (!String.IsNullOrEmpty(page.FeatureImage))
-            {
-                <div class="article-image left small-margin text-center">
-                <a href="/@page.LiveUrlSegment" class="margin-top-0">@RenderImage(page.FeatureImage)</a>
-                </div>
-            }
+                <div class="col-lg-6">
+                        <div class="article-title-item-wrapper">
+                            <h4 class="article-title-item margin-bottom-0"><a href="/@page.LiveUrlSegment">@page.Name </a></h4>
+                            <span class="small"><i class="fa fa-calendar"></i><strong> @page.PublishOn.Value.Day @page.PublishOn.Value.ToString("MMMMM") @page.PublishOn.Value.Year</strong></span>
+                            <span class="small"> - </span>
+                            <span class="small"><i class="fa fa-user"></i><strong> @page.User.Name</strong></span>
 
-            @Editable(page, p => p.Abstract)
-            <hr/>
-        </div>
-    </div>
+                            @if (!String.IsNullOrEmpty(page.FeatureImage))
+                        {
+                                <div class="article-image left small-margin text-center">
+                                    <a href="/@page.LiveUrlSegment" class="margin-top-0">@RenderImage(page.FeatureImage)</a>
+                                </div>
+                            }
+
+                            @Editable(page, p => p.Abstract)
+                            <hr />
+                            <span class="small"><i class="fa fa-tags"></i> @page.TagList</span>
+                        </div>
+                    </div>
+
             }
         }
+   
 }
 @if (Model.AllowPaging)
 {

@@ -3,14 +3,22 @@
     <div class="row">
         <div class="col-md-12">
             <h3 class="article-title-item margin-top-0">@Editable(Model, p => p.Name, false)</h3>
-            <a href="/@Model.Parent.UrlSegment" class="btn btn-default">Back</a>
-            @Model.CreatedOn.Day @Model.CreatedOn.ToString("MMMMM") @Model.CreatedOn.Year
-            <br />
+            
+            <span class="small"><i class="fa fa-calendar"></i><strong> @Model.PublishOn.Value.Day @Model.PublishOn.Value.ToString("MMMMM") @Model.PublishOn.Value.Year</strong></span>
+            <span class="small"> - </span>
+            <span class="small"><i class="fa fa-user"></i><strong> @Model.User.Name</strong></span>
+            <span class="small"> - </span>
+            <span class="small"><i class="fa fa-tags"></i> <strong>@Model.TagList</strong></span>
+            <hr />
             @if (!String.IsNullOrEmpty(Model.FeatureImage))
             {
                 <a href="/@Model.LiveUrlSegment" class="article-image margin-top-0">@RenderImage(Model.FeatureImage)</a>
             }
             @Editable(Model, page => page.BodyContent, true)
+            <a href="/@Model.Parent.UrlSegment" class="btn btn-success">Trở lại</a>
+            <hr />
+            <div class="fb-comments" data-href="http://@Request.Url.Authority/@Model.LiveUrlSegment" data-numposts="5"></div>
         </div>
+
     </div>
 </article>

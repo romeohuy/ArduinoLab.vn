@@ -1,4 +1,5 @@
-﻿@{
+﻿@using System.Web;
+@{
     Layout = "_BaseLayout.cshtml";
 }
 <div class="row">
@@ -7,5 +8,11 @@
         <div class="fb-page" data-href="https://www.facebook.com/taipm.bidv/" data-tabs="timeline" data-small-header="false" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true"><blockquote cite="https://www.facebook.com/taipm.bidv/" class="fb-xfbml-parse-ignore"><a href="https://www.facebook.com/taipm.bidv/">ArduinoLab.vn</a></blockquote></div>
         <hr />
         @{ RenderZone("Right Column"); }
+        <div class="statistic">
+            <h4 class="widget-article-title">Thống kê truy cập</h4>
+            <p><strong>Đang online:<span class="small"> @HttpContext.Current.Application["DangTruyCap"].ToString() </span><i class="fa fa-users"></i></strong></p>
+            <hr />
+            <p><strong>Đã truy cập:<span class="small"> @HttpContext.Current.Application["DaTruyCap"].ToString() </span><i class="fa fa-users"></i></strong></p>
+        </div>
     </div>
 </div>

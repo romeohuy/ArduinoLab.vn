@@ -26,7 +26,7 @@
                             <h4 class="article-title-item margin-bottom-0"><a href="/@page.LiveUrlSegment">@page.Name </a></h4>
                             <span class="small"><i class="fa fa-calendar"></i><strong> @page.PublishOn.Value.Day @page.PublishOn.Value.ToString("MMMMM") @page.PublishOn.Value.Year</strong></span>
                             <span class="small"> - </span>
-                            <span class="small"><i class="fa fa-user"></i><strong> @page.User.Name</strong></span>
+                            <span class="small"><i class="fa fa-user"></i><strong>@(page.User == null  ? "" : page.User.Name)</strong></span>
 
                             @if (!String.IsNullOrEmpty(page.FeatureImage))
                         {
@@ -35,9 +35,12 @@
                                 </div>
                             }
 
-                            @Editable(page, p => p.Abstract)
+                            @if (page.Abstract != null)
+                            {
+                                @Editable(page, p => p.Abstract)
+                            }
                             <hr />
-                            <span class="small"><i class="fa fa-tags"></i> @page.TagList</span>
+                            <span class="small"><i class="fa fa-tags"></i> @(string.IsNullOrEmpty(page.TagList) ? "" : page.TagList)</span>
                         </div>
                     </div>
 

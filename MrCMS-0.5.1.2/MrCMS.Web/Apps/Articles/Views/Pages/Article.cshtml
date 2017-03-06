@@ -6,7 +6,7 @@
             
             <span class="small"><i class="fa fa-calendar"></i><strong> @Model.PublishOn.Value.Day @Model.PublishOn.Value.ToString("MMMMM") @Model.PublishOn.Value.Year</strong></span>
             <span class="small"> - </span>
-            <span class="small"><i class="fa fa-user"></i><strong> @Model.User.Name</strong></span>
+            <span class="small"><i class="fa fa-user"></i><strong> @(Model.User == null ? "" : Model.User.Name)</strong></span>
             <span class="small"> - </span>
             <span class="small"><i class="fa fa-tags"></i> <strong>@Model.TagList</strong></span>
             <hr />

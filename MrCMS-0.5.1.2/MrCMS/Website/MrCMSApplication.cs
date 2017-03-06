@@ -66,10 +66,12 @@ namespace MrCMS.Website
 
 
             OnApplicationStart();
+            var webRootPath = Server.MapPath("~");
+            var docPath = Path.GetFullPath(Path.Combine(webRootPath, "../Count_Visited.txt"));
             //Kiểm tra nếu chưa tồn tại file thì tạo file Count_Visited.txt
-            if (!File.Exists(Server.MapPath("Count_Visited.txt")))
-                File.WriteAllText(Server.MapPath("Count_Visited.txt"),"0");
-            Application["DaTruyCap"] = int.Parse(File.ReadAllText(Server.MapPath("Count_Visited.txt")));
+            if (!File.Exists(docPath))
+                File.WriteAllText(docPath, "0");
+            Application["DaTruyCap"] = int.Parse(File.ReadAllText(docPath));
         }
 
         protected void Application_End()
@@ -87,7 +89,9 @@ namespace MrCMS.Website
                 Application["DangTruyCap"] = (int)Application["DangTruyCap"] + 1;
             // Tăng số đã truy cập lên 1 nếu có khách truy cập
             Application["DaTruyCap"] = (int)Application["DaTruyCap"] + 1;
-            File.WriteAllText(Server.MapPath("Count_Visited.txt"), Application["DaTruyCap"].ToString());
+            var webRootPath = Server.MapPath("~");
+            var docPath = Path.GetFullPath(Path.Combine(webRootPath, "../Count_Visited.txt"));
+            File.WriteAllText(docPath, Application["DaTruyCap"].ToString());
         }
 
         protected void Session_End()

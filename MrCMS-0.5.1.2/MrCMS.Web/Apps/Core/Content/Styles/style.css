@@ -99,6 +99,7 @@ nav.navbar-mrcms {
     background:#f8f8f8;
     padding: 10px;
     margin:0 -10px 10px -10px;
+    
 }
     .article-title-item {
          margin-bottom: 10px;
@@ -144,6 +145,11 @@ nav.navbar-mrcms {
         color: #f1f1f1;
         padding: 20px 0;
     }
+@media(min-width: 768px) {
+    .article-title-item-wrapper {
+        min-height: 530px;
+    }
+}
 @media (max-width: 768px) {
     .article-image img
      {

@@ -11,7 +11,7 @@
     @Html.LabelFor(model => model.Abstract)
     @Html.TextAreaFor(model => model.Abstract, new { @rows = "2", @class = "form-control" })
     <span id="abstract-character-count">
-        <span>@((160 - (Model.Abstract ?? string.Empty).Length) + " characters remaining")</span>
+        <span>@((500 - (Model.Abstract ?? string.Empty).Length) + " characters remaining")</span>
     </span>
 </div>
 <div class="form-group">

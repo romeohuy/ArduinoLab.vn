@@ -4,7 +4,7 @@
         if (!abstractElement.length)
             return;
         var length = abstractElement.val().length;
-        var remaining = 160 - length;
+        var remaining = 500 - length;
         var abstractCharacterCountMessage = $('#abstract-character-count');
         abstractCharacterCountMessage.html($('<span>').html(remaining + ' characters remaining'));
         if (remaining < 0) {

@@ -118,6 +118,9 @@ nav.navbar-mrcms {
        max-height:250px;
        min-height:250px; 
      }
+ .tags, .green , .tags .fa{
+     color: #00979c;
+ }
     /**End article list style**/
     /**widget-article-title**/
     .widget-article-title {
@@ -129,7 +132,7 @@ nav.navbar-mrcms {
     .widget-article-title-item {
         border-bottom: 1px dashed #e1e1e1;
         padding: 0 10px;
-        font-size: 14px;
+        font-size: 16px;
     }
     .widget-article-title-item a {
         color: #e47128;
@@ -147,7 +150,7 @@ nav.navbar-mrcms {
     }
 @media(min-width: 768px) {
     .article-title-item-wrapper {
-        min-height: 530px;
+        /*min-height: 530px;*/
     }
 }
 @media (max-width: 768px) {

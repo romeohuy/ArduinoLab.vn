@@ -4,11 +4,11 @@
         <div class="col-md-12">
             <h3 class="article-title-item margin-top-0">@Editable(Model, p => p.Name, false)</h3>
             
-            <span class="small"><i class="fa fa-calendar"></i><strong> @Model.PublishOn.Value.Day @Model.PublishOn.Value.ToString("MMMMM") @Model.PublishOn.Value.Year</strong></span>
-            <span class="small"> - </span>
-            <span class="small"><i class="fa fa-user"></i><strong> @(Model.User == null ? "" : Model.User.Name)</strong></span>
-            <span class="small"> - </span>
-            <span class="small"><i class="fa fa-tags"></i> <strong>@Model.TagList</strong></span>
+            <span class="small green"><i class="fa fa-calendar"></i><strong> @Model.PublishOn.Value.Day @Model.PublishOn.Value.ToString("MMMMM") @Model.PublishOn.Value.Year</strong></span>
+            <span class="small green"> - </span>
+            <span class="small green"><i class="fa fa-user"></i><strong> @(Model.User == null ? "" : Model.User.Name)</strong></span>
+            <span class="small green"> - </span>
+            <span class="small green"><i class="fa fa-tags"></i> <strong>@Model.TagList</strong></span>
             <hr />
             @if (!String.IsNullOrEmpty(Model.FeatureImage))
             {
